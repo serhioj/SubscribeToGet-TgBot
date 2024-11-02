@@ -1,4 +1,4 @@
-# Owner avatar SubscribeToGet-TgBot
+# SubscribeToGet-TgBot
 
 ## Description
 
@@ -16,7 +16,7 @@ This is a Telegram bot designed to attract clients without advertising. The bot 
 
 1. Clone the repository:
 
-    git clone https://github.com/Your_Username/Owner-avatar-SubscribeToGet-TgBot.git
+    git clone https://github.com/Your_Username/SubscribeToGet-TgBot.git
 
 2. Navigate to the project directory:
 
