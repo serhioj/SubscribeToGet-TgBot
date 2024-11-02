@@ -13,7 +13,7 @@ import os
 from dotenv import load_dotenv
 
 # Загружаем переменные среды
-load_dotenv() 
+load_dotenv()
 
 TOKEN = os.getenv("TOKEN")
 CHANNEL_ID = os.getenv("CHANNEL_ID")
@@ -154,14 +154,14 @@ async def send_file(callback_query: CallbackQuery):
     if callback_query.data == "from_pc":
         await callback_query.message.edit_reply_markup(reply_markup=None)
         document = FSInputFile("files_to_get/guide_for_pc.pdf")
-        await callback_query.message.answer_document(document)
+        await callback_query.message.answer_document(document, request_timeout=60)
     elif callback_query.data == "from_mobile":
         await callback_query.message.edit_reply_markup(reply_markup=None)
         document = FSInputFile("files_to_get/guide_for_mobile.pdf")
-        await callback_query.message.answer_document(document)
+        await callback_query.message.answer_document(document, request_timeout=60)
     
     # Запускаем задачу для отложенного сообщения про статью
-        asyncio.create_task(send_delayed_article(user_id))
+    asyncio.create_task(send_delayed_article(user_id))
 
     # Если поле feedback пустое (None), запускаем задачу для отложенного сообщения
     if feedback is None or feedback[0] is None:
@@ -169,7 +169,7 @@ async def send_file(callback_query: CallbackQuery):
         asyncio.create_task(send_delayed_message(user_id))
 
 async def send_delayed_message(user_id: int):
-    await asyncio.sleep(60 * 60)
+    await asyncio.sleep(3 * 60 * 60)
     try:
         pending_feedback_users.add(user_id)
         
@@ -182,7 +182,7 @@ async def send_delayed_message(user_id: int):
         print(f"Ошибка при отправке сообщения: {e}")
 
 async def send_delayed_article(user_id: int):
-    await asyncio.sleep(60 * 90)
+    await asyncio.sleep(24 * 60 * 60)
     try:
         pending_feedback_users.add(user_id)
         
@@ -194,7 +194,8 @@ async def send_delayed_article(user_id: int):
             "напишите «Индивидуальные занятия по танцам для начинающих взрослых и детей от 6 лет, без лишних глаз».\n"
             "\n🫠 Таких незаметных ошибок целое море. Я собрал 6 самых распространённых ошибок в одну "
             "<a href='https://tenchat.ru/media/2555890-ubiytsy-konversii-6-antagonistov-prodayuschego-sayta?clckid=8780e6b5'>короткую статью, которая поможет вам добиться максимальных показателей конверсии.</a>"
-            " Если интересно — буду рад вашему вниманию."
+            " Если интересно — буду рад вашему вниманию.",
+            parse_mode="HTML"
         )   
     except Exception as e:
         print(f"Ошибка при отправке статьи: {e}")
@@ -211,8 +212,6 @@ async def save_feedback(message: Message):
         pending_feedback_users.remove(user_id)
         
         await message.answer("Спасибо за ваш отзыв!")
-
-
 
 async def main():
     await dp.start_polling(bot)
