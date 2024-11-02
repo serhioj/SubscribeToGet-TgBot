@@ -7,10 +7,9 @@ This is a Telegram bot designed to attract clients without advertising. The bot 
 ## Features
 
 - Subscription check for the channel
-- Sending guides in TXT format
+- Sending guides in PDF format
 - Saving user feedback in the database
-- Generating a CSV file with user data for the administrator
-- Automatic reminders and articles sent to users
+- Automatic reminders sent to users
 
 ## Installation
 
@@ -52,10 +51,9 @@ After receiving the guide, you can leave your feedback.
 ### Возможности
 
 - Проверка подписки на канал
-- Отправка гайдов в формате TXT
+- Отправка гайдов в формате PDF
 - Сохранение отзывов пользователей в базе данных
-- Генерация CSV-файла с данными пользователей для администратора
-- Автоматическая отправка напоминаний и статей пользователям
+- Автоматическая отправка напоминаний пользователям
 
 ## Установка
 
