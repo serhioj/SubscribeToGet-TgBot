@@ -1,4 +1,5 @@
 # SubscribeToGet-TgBot
+# SubscribeToGet-TgBot
 
 ## Description
 
@@ -8,7 +9,9 @@ This is a Telegram bot designed to attract clients without advertising. The bot 
 
 - Subscription check for the channel
 - Sending guides in PDF format
+- Sending guides in PDF format
 - Saving user feedback in the database
+- Automatic reminders sent to users
 - Automatic reminders sent to users
 
 ## Installation
@@ -16,13 +19,16 @@ This is a Telegram bot designed to attract clients without advertising. The bot 
 1. Clone the repository:
 
         git clone https://github.com/Your_Username/Owner-avatar-SubscribeToGet-TgBot.git
+        git clone https://github.com/Your_Username/Owner-avatar-SubscribeToGet-TgBot.git
 
 2. Navigate to the project directory:
 
         cd Owner-avatar-SubscribeToGet-TgBot
+        cd Owner-avatar-SubscribeToGet-TgBot
 
 3. Install the required dependencies:
 
+        pip install -r requirements.txt
         pip install -r requirements.txt
 
 4. Create a .env file in the root directory and add the following variables:
@@ -30,13 +36,20 @@ This is a Telegram bot designed to attract clients without advertising. The bot 
         TOKEN=your_bot_token
         CHANNEL_ID=channel_id
         ADMIN_PASSWORD=admin_password
+        TOKEN=your_bot_token
+        CHANNEL_ID=channel_id
+        ADMIN_PASSWORD=admin_password
 
 5. Run the bot:
 
         python main.py
+        python main.py
 
 ## Usage
 
+Send the /start command to begin interacting with the bot.
+Subscribe to the specified channel and send "I subscribed" to receive the guide.
+After receiving the guide, you can leave your feedback.
 Send the /start command to begin interacting with the bot.
 Subscribe to the specified channel and send "I subscribed" to receive the guide.
 After receiving the guide, you can leave your feedback.
@@ -52,7 +65,9 @@ After receiving the guide, you can leave your feedback.
 
 - Проверка подписки на канал
 - Отправка гайдов в формате PDF
+- Отправка гайдов в формате PDF
 - Сохранение отзывов пользователей в базе данных
+- Автоматическая отправка напоминаний пользователям
 - Автоматическая отправка напоминаний пользователям
 
 ## Установка
@@ -60,13 +75,16 @@ After receiving the guide, you can leave your feedback.
 1. Склонируйте репозиторий:
 
         git clone https://github.com/Ваш_Пользователь/SubscribeToGet-TgBot.git
+        git clone https://github.com/Ваш_Пользователь/SubscribeToGet-TgBot.git
 
 2. Перейдите в директорию проекта:
 
         cd Owner-avatar-SubscribeToGet-TgBot
+        cd Owner-avatar-SubscribeToGet-TgBot
 
 3. Установите необходимые зависимости:
 
+        pip install -r requirements.txt
         pip install -r requirements.txt
 
 4. Создайте файл .env в корневой директории и добавьте туда следующие переменные:
@@ -74,9 +92,13 @@ After receiving the guide, you can leave your feedback.
         TOKEN=ваш_токен_бота
         CHANNEL_ID=идентификатор_канала_для_подписки
         ADMIN_PASSWORD=пароль_для_администратора
+        TOKEN=ваш_токен_бота
+        CHANNEL_ID=идентификатор_канала_для_подписки
+        ADMIN_PASSWORD=пароль_для_администратора
 
 5. Запустите бота:
 
+        python main.py
         python main.py
 
 ## Использование
