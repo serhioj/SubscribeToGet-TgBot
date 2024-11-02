@@ -1,5 +1,4 @@
 # SubscribeToGet-TgBot
-# SubscribeToGet-TgBot
 
 ## Description
 
