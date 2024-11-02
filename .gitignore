@@ -1,0 +1,10 @@
+.env
+
+
+venv/
+
+
+/files_to_get/*
+/users_db/*
+!files_to_get/.gitkeep
+!users_db/.gitkeep
